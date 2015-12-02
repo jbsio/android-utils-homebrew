@@ -9,8 +9,7 @@ class FbInfer < Formula
 
   def install
     ENV.deparallelize
-    system "bash", "-c", "opam init -y --comp=4.01.0; eval $(opam config env); opam update; opam install -y atdgen.1.6.0 extlib.1.5.4 javalib.2.3.1 sawja.1.5.1"
-    system "make", "-C", "infer", "java"
+    system "bash", "-c", "opam init -y --comp=4.01.0; eval $(opam config env); opam update; opam install -y atdgen.1.6.0 extlib.1.5.4 javalib.2.3.1 sawja.1.5.1; make -C infer java"
   end
 
   test do
